@@ -34,13 +34,17 @@ function returnValue(class) {
 			course : class[0].Course,
 			score1 : class[0].Score,
 			score2 : class[1].Score,
-			score3 : class[2].Score
+			score3 : class[2].Score;
 		}
-	}else(class =="cs557"){
+	}else if(class =="cs557"){
 		return{ 
 			course : class[3].Course,
 			score1 : class[3].Score,
 			score2 : class[4].Score
+		}
+	}else{
+		return{
+			"Error,plz enter class"
 		}
 	}
 };
