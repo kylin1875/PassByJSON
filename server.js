@@ -31,14 +31,16 @@ var class = [
 function returnValue(class) {
 	if(class=="cs551"){
 		return{
-				score1 : class[0].score,
-				score2 : class[1].score,
-				score3 : class[2].score
+			course : class[0].Course,
+			score1 : class[0].Score,
+			score2 : class[1].Score,
+			score3 : class[2].Score
 		}
-	}else{
+	}else(class =="cs557"){
 		return{ 
-			score1 : class[3].score,
-			score2 : class[4].score
+			course : class[3].Course,
+			score1 : class[3].Score,
+			score2 : class[4].Score
 		}
 	}
 };
