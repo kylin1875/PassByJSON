@@ -31,14 +31,14 @@ var class = [
 function returnValue(class) {
 	if(class=="cs551"){
 		return{
-				score : class[0].score,
-				score : class[1].score,
-				score : class[2].score
+				score1 : class[0].score,
+				score2 : class[1].score,
+				score3 : class[2].score
 		}
 	}else{
 		return{ 
-			score : class[3].score,
-			score : class[4].score
+			score1 : class[3].score,
+			score2 : class[4].score
 		}
 	}
 }
@@ -46,7 +46,7 @@ function returnValue(class) {
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true)
 	var class = new Date(parsedUrl.query.course_id)
-	var result = returnValue(time)
+	var result = returnValue(class)
 	if (result) {
 		res.writeHead(200, { 'Content-Type': 'application/json' })
 		res.end(JSON.stringify(result))
