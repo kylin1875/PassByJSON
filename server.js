@@ -46,15 +46,15 @@ function returnValue(class) {
 };
 
 var server = http.createServer(function (req, res) {
-	var parsedUrl = url.parse(req.url, true)
-	var class = new Date(parsedUrl.query.course_id)
-	var result = returnValue(class)
+	var parsedUrl = url.parse(req.url, true);
+	var class = new Date(parsedUrl.query.course_id);
+	var result = returnValue(class);
 	if (result) {
-		res.writeHead(200, { 'Content-Type': 'application/json' })
-		res.end(JSON.stringify(result))
+		res.writeHead(200, { 'Content-Type': 'application/json' });
+		res.end(JSON.stringify(result));
 	} else {
-		res.writeHead(404)
-		res.end()
+		res.writeHead(404);
+		res.end();
 	}
 });
 
