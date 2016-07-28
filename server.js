@@ -1,5 +1,5 @@
-var http = require('http')
-var url = require('url')
+var http = require('http');
+var url = require('url');
 var class = [ 
 	{
 		 "Course": "CS551",
@@ -26,7 +26,7 @@ var class = [
 		 "Homework":"2",
 		 "Score":"85"
 	}
-]
+];
 
 function returnValue(class) {
 	if(class=="cs551"){
@@ -41,7 +41,7 @@ function returnValue(class) {
 			score2 : class[4].score
 		}
 	}
-}
+};
 
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true)
@@ -54,10 +54,10 @@ var server = http.createServer(function (req, res) {
 		res.writeHead(404)
 		res.end()
 	}
-})
+});
 
 var port = process.env.PORT || 3000;
 server.listen(port, function(){ 
 	console.log('listening on *'+port);
-});p
+});
 		
