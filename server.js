@@ -2,33 +2,33 @@ var http = require('http');
 var url = require('url');
 var class = [ 
 	{
-		 "Course": "CS551",
-		 "Homework":"1",
-		 "Score":"84"
+		 Course: "CS551",
+		 Homework:"1",
+		 Score:"84"
 	},
 	{
-		 "Course": "CS551",
-		 "Homework":"2",
-		 "Score":"93"
+		 Course: "CS551",
+		 Homework:"2",
+		 Score:"93"
 	},
 	{
-		 "Course": "CS551",
-		 "Homework":"3",
-		 "Score":"88"
+		 Course: "CS551",
+		 Homework:"3",
+		 Score:"88"
 	},
 	{
-		 "Course": "CS557",
-		 "Homework":"1",
-		 "Score":"90"
+		 Course: "CS557",
+		 Homework:"1",
+		 Score:"90"
 	},
 	{
-		 "Course": "CS557",
-		 "Homework":"2",
-		 "Score":"85"
+		 Course: "CS557",
+		 Homework:"2",
+		 Score:"85"
 	}
 ];
 
-function returnValue(class) {
+function getMsg(info) {
 	if(class=="cs551"){
 		return{
 			course : class[0].Course,
@@ -37,7 +37,7 @@ function returnValue(class) {
 			homework : class[1].Homework,
 			score2 : class[1].Score,
 			homework : class[2].Homework,
-			score3 : class[2].Score;
+			score3 : class[2].Score
 		}
 	}else if(class =="cs557"){
 		return{ 
@@ -56,9 +56,9 @@ function returnValue(class) {
 
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true);
-	var classes = new Date(parsedUrl.query.course_id);
+	var info = new Date(parsedUrl.query.course_id);
 	var result;
-	result = returnValue(classes);
+	result = getMsg(info);
 	if (result) {
 		res.writeHead(200, { 'Content-Type': 'application/json' });
 		res.end(JSON.stringify(result));
