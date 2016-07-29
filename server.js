@@ -45,14 +45,15 @@ function returnValue(class) {
 	}else{
 		return{
 			error:500
-		}
+		};
 	}
 };
 
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true);
-	var class = new Date(parsedUrl.query.course_id);
-	var result = returnValue(class);
+	var classes = new Date(parsedUrl.query.course_id);
+	var result;
+	result = returnValue(classes);
 	if (result) {
 		res.writeHead(200, { 'Content-Type': 'application/json' });
 		res.end(JSON.stringify(result));
