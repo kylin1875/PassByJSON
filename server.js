@@ -2,29 +2,29 @@ var http = require('http');
 var url = require('url');
 var class = [ 
 	{
-		 Course: "CS551",
-		 Homework:"1",
-		 Score:"84"
+		 "Course" : "CS551",
+		 "Homework" : "1",
+		 "Score" : "84"
 	},
 	{
-		 Course: "CS551",
-		 Homework:"2",
-		 Score:"93"
+		 "Course" : "CS551",
+		 "Homework" : "2",
+		 "Score" : "93"
 	},
 	{
-		 Course: "CS551",
-		 Homework:"3",
-		 Score:"88"
+		 "Course" : "CS551",
+		 "Homework" : "3",
+		 "Score" : "88"
 	},
 	{
-		 Course: "CS557",
-		 Homework:"1",
-		 Score:"90"
+		 "Course" : "CS557",
+		 "Homework" : "1",
+		 "Score" : "90"
 	},
 	{
-		 Course: "CS557",
-		 Homework:"2",
-		 Score:"85"
+		 "Course" : "CS557",
+		 "Homework" : "2",
+		 "Score" : "85"
 	}
 ];
 
