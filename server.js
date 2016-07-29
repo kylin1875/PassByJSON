@@ -32,14 +32,19 @@ function returnValue(class) {
 	if(class=="cs551"){
 		return{
 			course : class[0].Course,
+			homework : class[0].Homework,
 			score1 : class[0].Score,
+			homework : class[1].Homework,
 			score2 : class[1].Score,
+			homework : class[2].Homework,
 			score3 : class[2].Score;
 		}
 	}else if(class =="cs557"){
 		return{ 
 			course : class[3].Course,
+			homework : class[3].Homework,
 			score1 : class[3].Score,
+			homework : class[4].Homework,
 			score2 : class[4].Score
 		}
 	}else{
