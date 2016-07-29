@@ -1,51 +1,57 @@
 var http = require('http');
 var url = require('url');
-var class = [ 
+var scoreeee = [
 	{
-		 "Course" : "CS551",
-		 "Homework" : "1",
-		 "Score" : "84"
+		 Course : "CS551",
+		 Homework : 1,
+		 Score : 84
 	},
 	{
-		 "Course" : "CS551",
-		 "Homework" : "2",
-		 "Score" : "93"
+		 Course : "CS551",
+		 Homework : 2,
+		 Score : 93
 	},
 	{
-		 "Course" : "CS551",
-		 "Homework" : "3",
-		 "Score" : "88"
+		 Course : "CS551",
+		 Homework : 3,
+		 Score : 88
 	},
 	{
-		 "Course" : "CS557",
-		 "Homework" : "1",
-		 "Score" : "90"
+		 Course : "CS557",
+		 Homework : 1,
+		 Score : 90
 	},
 	{
-		 "Course" : "CS557",
-		 "Homework" : "2",
-		 "Score" : "85"
+		 Course : "CS557",
+		 Homework : 2,
+		 Score : 85
 	}
 ];
 
-function getMsg(info) {
-	if(class=="cs551"){
+function getMsg(msg) {
+	if(msg=="CS551"){
 		return{
-			course : class[0].Course,
-			homework : class[0].Homework,
-			score1 : class[0].Score,
-			homework : class[1].Homework,
-			score2 : class[1].Score,
-			homework : class[2].Homework,
-			score3 : class[2].Score
+			Course : scoreeee[0].Course,
+			Homework : scoreeee[0].Homework,
+			Score : scoreeee[0].Score,
+
+			Course : scoreeee[1].Course,
+			Homework : scoreeee[1].Homework,
+			Score : scoreeee[1].Score,
+
+			Course : scoreeee[2].Course,
+			Homework : scoreeee[2].Homework,
+			Score : scoreeee[2].Score
 		}
-	}else if(class =="cs557"){
+	}else if(msg =="CS557"){
 		return{ 
-			course : class[3].Course,
-			homework : class[3].Homework,
-			score1 : class[3].Score,
-			homework : class[4].Homework,
-			score2 : class[4].Score
+			Course : scoreeee[3].Course,
+			Homework : scoreeee[3].Homework,
+			Score : scoreeee[3].Score,
+
+			Course : scoreeee[4].Course,
+			Homework : scoreeee[4].Homework,
+			Score : scoreeee[4].Score
 		}
 	}else{
 		return{
@@ -56,16 +62,16 @@ function getMsg(info) {
 
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true);
-	var info = new Date(parsedUrl.query.course_id);
-	var result;
-	result = getMsg(info);
-	if (result) {
-		res.writeHead(200, { 'Content-Type': 'application/json' });
-		res.end(JSON.stringify(result));
-	} else {
+	var info = new String(parsedUrl.query.Course);
+	var result = getMsg(info);
+	/*if (result) {
+
+	}*//* else {
 		res.writeHead(404);
 		res.end();
-	}
+	}*/
+	res.writeHead(200, { 'Content-Type': 'text/plain' });
+	res.end(JSON.stringify(result));
 });
 
 var port = process.env.PORT || 3000;

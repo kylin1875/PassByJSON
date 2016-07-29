@@ -1,13 +1,12 @@
 {
+  "name": "zzw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "name": "passbyjson",
-  "version": "1.0.0",
-  "main": "server.js",
-  "dependencies": {},
-  "devDependencies": {},
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
