@@ -44,7 +44,7 @@ function returnValue(class) {
 		}
 	}else{
 		return{
-			"Error,plz enter class"
+			error:500
 		}
 	}
 };
