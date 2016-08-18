@@ -21,14 +21,14 @@ var score = [
 function getMsg(msg) {
 	if(msg==11111){
 		return{
-			Course : score[0].student_id,
-			Homework : score[0].Name,
+			student_id : score[0].student_id,
+			Name : score[0].Name,
 			Score : score[0].Score,
 		}
 	}else if(msg ==22222){
 		return{ 
-			Course : score[1].student_id,
-			Homework : score[1].Name,
+			student_id : score[1].student_id,
+			Name : score[1].Name,
 			Score : score[1].Score,
 		}
 	}else{
@@ -42,12 +42,7 @@ var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true);
 	var info = new String(parsedUrl.query.student_id);
 	var result = getMsg(info);
-	/*if (result) {
-
-	}*//* else {
-		res.writeHead(404);
-		res.end();
-	}*/
+	
 	res.writeHead(200, { 'Content-Type': 'text/plain' });
 	res.end(JSON.stringify(result));
 });
