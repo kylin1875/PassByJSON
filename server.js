@@ -1,57 +1,35 @@
 var http = require('http');
 var url = require('url');
-var scoreeee = [
+var score = [
 	{
-		 Course : "CS551",
-		 Homework : 1,
+		 student_id : 11111,
+		 Name : "Bruce Lee",
 		 Score : 84
 	},
 	{
-		 Course : "CS551",
-		 Homework : 2,
-		 Score : 93
+		student_id : 22222,
+		 Name : "Jackie Chen",
+		 Score : 93 
 	},
 	{
-		 Course : "CS551",
-		 Homework : 3,
-		 Score : 88
-	},
-	{
-		 Course : "CS557",
-		 Homework : 1,
-		 Score : 90
-	},
-	{
-		 Course : "CS557",
-		 Homework : 2,
-		 Score : 85
+		student_id : 33333,
+		 Name : "Jet Li",
+		 Score : 88 
 	}
 ];
 
 function getMsg(msg) {
-	if(msg=="CS551"){
+	if(msg==11111){
 		return{
-			Course : scoreeee[0].Course,
-			Homework : scoreeee[0].Homework,
-			Score : scoreeee[0].Score,
-
-			Course : scoreeee[1].Course,
-			Homework : scoreeee[1].Homework,
-			Score : scoreeee[1].Score,
-
-			Course : scoreeee[2].Course,
-			Homework : scoreeee[2].Homework,
-			Score : scoreeee[2].Score
+			Course : score[0].student_id,
+			Homework : score[0].Name,
+			Score : score[0].Score,
 		}
-	}else if(msg =="CS557"){
+	}else if(msg ==22222){
 		return{ 
-			Course : scoreeee[3].Course,
-			Homework : scoreeee[3].Homework,
-			Score : scoreeee[3].Score,
-
-			Course : scoreeee[4].Course,
-			Homework : scoreeee[4].Homework,
-			Score : scoreeee[4].Score
+			Course : score[1].student_id,
+			Homework : score[1].Name,
+			Score : score[1].Score,
 		}
 	}else{
 		return{
@@ -62,7 +40,7 @@ function getMsg(msg) {
 
 var server = http.createServer(function (req, res) {
 	var parsedUrl = url.parse(req.url, true);
-	var info = new String(parsedUrl.query.Course);
+	var info = new String(parsedUrl.query.student_id);
 	var result = getMsg(info);
 	/*if (result) {
 
@@ -78,4 +56,3 @@ var port = process.env.PORT || 3000;
 server.listen(port, function(){ 
 	console.log('listening on *'+port);
 });
-		
